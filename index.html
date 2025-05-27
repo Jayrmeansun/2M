@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สุขสันต์วันครบรอบครับแฟน</title>
+    <title>สุขสันต์วันครบรอบที่รัก</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -13,14 +13,6 @@
             0% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
-        }
-        .card { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; position: relative; }
-        .card.visible { opacity: 1; transform: translateY(0); }
-        .sparkle { position: absolute; width: 20px; animation: sparkle 1s infinite; }
-        @keyframes sparkle {
-            0% { opacity: 0.3; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0.3; transform: scale(0.5); }
         }
         .floating-heart { position: absolute; animation: floatUp 3s linear forwards; }
         @keyframes floatUp {
@@ -33,41 +25,19 @@
     <!-- Landing Page -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-200 to-purple-200 relative overflow-hidden">
         <div class="text-center px-4 z-10">
-            <h1 class="text-3xl md:text-5xl font-bold text-pink-600">เว็บไซต์รวมความทรงจำของเรา</h1>
-            <p class="text-lg md:text-2xl text-gray-700 mt-4">ขอบคุณที่ทำให้ทุกวันเป็นวันพิเศษนะค้าบ</p>
+            <h1 class="text-3xl md:text-5xl font-bold text-pink-600">สุขสันต์วันครบรอบ 1 ปี!</h1>
+            <p class="text-lg md:text-2xl text-gray-700 mt-4">ถึงที่รักของฉัน ขอบคุณที่ทำให้ทุกวันพิเศษ</p>
             <img id="main-heart" src="assets/images/heart.png" class="heart w-16 md:w-20 mx-auto mt-6" alt="Heart">
-            <div id="secret-message" class="hidden text-lg text-pink-800 mt-4">รักอ้วงที่สุดเลยย</div>
+            <div id="secret-message" class="hidden text-lg text-pink-800 mt-4">รักเธอตลอดไปนะ!</div>
             <audio id="bgm" src="assets/sounds/love-song.mp3" loop></audio>
             <div class="mt-6 flex justify-center gap-4 flex-wrap">
                 <button onclick="playPause()" class="bg-pink-500 text-white py-2 px-4 rounded-full hover:bg-pink-600">เล่น/หยุดเพลง</button>
-                <a href="#timeline" class="bg-purple-500 text-white py-2 px-4 rounded-full hover:bg-purple-600">ดูความทรงจำของเรา</a>
+                <a href="gallery.html" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600">แกลลอรีของเรา</a>
                 <a href="#game" class="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600">เล่นเกมเก็บหัวใจ</a>
                 <a href="reply.html" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">จดหมายถึงฉัน</a>
                 <a href="video.html" class="bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600">ดูวิดีโอความทรงจำ</a>
             </div>
         </div>
-    </section>
-
-    <!-- Timeline -->
-    <section id="timeline" class="py-12 bg-white">
-        <h2 class="text-3xl font-bold text-center text-pink-600">ความทรงจำของเรา</h2>
-        <div class="max-w-4xl mx-auto mt-8 grid gap-6 px-4" id="memory-container">
-            <div class="card bg-pink-50 p-6 rounded-lg shadow-md relative">
-                <img src="assets/images/memory1.png" class="w-full h-48 object-cover rounded" alt="First Meet">
-                <h3 class="text-xl font-bold mt-4">1 เดือน</h3>
-                <p class="text-gray-600">28 เมษายน 2568 - เป็น 1 เดือนที่มีความสุขที่สุดเลย</p>
-                <button onclick="viewMemory(0)" class="mt-4 bg-purple-500 text-white py-1 px-3 rounded-full hover:bg-purple-600">ดูรายละเอียด</button>
-                <img src="assets/images/sparkle.png" class="sparkle top-2 left-2" alt="Sparkle">
-            </div>
-            <div class="card bg-purple-50 p-6 rounded-lg shadow-md relative">
-                <img src="assets/images/memory2.png" class="w-full h-48 object-cover rounded" alt="First Date">
-                <h3 class="text-xl font-bold mt-4">2 เดือน</h3>
-                <p class="text-gray-600">28 พฤษภาคม 2568 - ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ</p>
-                <button onclick="viewMemory(1)" class="mt-4 bg-purple-500 text-white py-1 px-3 rounded-full hover:bg-purple-600">ดูรายละเอียด</button>
-                <img src="assets/images/sparkle.png" class="sparkle top-2 right-2" alt="Sparkle">
-            </div>
-        </div>
-        
     </section>
 
     <!-- Game -->
@@ -76,7 +46,7 @@
         <p class="text-lg text-gray-700 mt-2">เก็บหัวใจให้ครบ <span id="target-score">365</span> ดวง!</p>
         <p class="text-lg text-gray-700">คะแนน: <span id="score">0</span></p>
         <div id="game-area" class="w-full max-w-md h-96 bg-white rounded-lg shadow-md relative overflow-hidden"></div>
-        <div id="game-message" class="hidden text-lg text-pink-800 mt-4">เก็บใจครบ 60 วันแล้วก็ห้ามไปแบ่งใจให้เกย์นะอ้วง555</div>
+        <div id="game-message" class="hidden text-lg text-pink-800 mt-4">ยินดีด้วย! เธอเก็บหัวใจครบแล้ว รักเธอ 365 วันเลยนะ!</div>
     </section>
 
     <script src="script.js"></script>

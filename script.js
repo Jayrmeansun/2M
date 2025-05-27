@@ -37,83 +37,53 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach(card => observer.observe(card));
 });
 
-// View Memory Detail
-function viewMemory(index) {
-    window.location.href = `memory-detail.html?index=${index}`;
-}
-
-// Add New Memory
-function addMemory() {
-    const title = document.getElementById('new-memory-title').value;
-    const date = document.getElementById('new-memory-date').value;
-    const desc = document.getElementById('new-memory-desc').value;
-    const imageInput = document.getElementById('new-memory-image');
-    let imageSrc = 'assets/images/heart.png'; // Default image
-
-    if (imageInput.files && imageInput.files[0]) {
-        imageSrc = URL.createObjectURL(imageInput.files[0]);
-    }
-
-    if (title && date && desc) {
-        const memories = JSON.parse(localStorage.getItem('memories') || '[]');
-        const formattedDate = new Date(date).toLocaleDateString('th-TH', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-        memories.push({ title, date: formattedDate, desc, image: imageSrc });
-        localStorage.setItem('memories', JSON.stringify(memories));
-        renderMemories();
-        document.getElementById('new-memory-title').value = '';
-        document.getElementById('new-memory-date').value = '';
-        document.getElementById('new-memory-desc').value = '';
-        imageInput.value = '';
-    }
-}
-
 // Render Memories
 function renderMemories() {
     const memories = JSON.parse(localStorage.getItem('memories') || '[]');
-    const container = document.getElementById('memory-container');
+    const container = document.getElementById('memory-memory');
+    if (!container) {
+        console.error('Memory container not found');
+        return;
+    }
     container.innerHTML = '';
+    if (memories.length === 0) {
+        container.innerHTML = '<p class="text-gray-600 text-center">ไม่มีความทรงจำ</p>';
+        return;
+    }
     memories.forEach((memory, index) => {
         const card = document.createElement('div');
         card.className = `card bg-${index % 2 === 0 ? 'pink' : 'purple'}-50 p-6 rounded-lg shadow-md relative`;
         card.innerHTML = `
-            <img src="${memory.image}" class="w-full h-48 object-cover rounded" alt="${memory.title}">
-            <h3 class="text-xl font-bold mt-4">${memory.title}</h3>
-            <p class="text-gray-600">${memory.date} - ${memory.desc}</p>
-            <button onclick="viewMemory(${index})" class="mt-4 bg-purple-500 text-white py-1 px-3 rounded-full hover:bg-purple-600">ดูรายละเอียด</button>
+            <img src="${memory.image || 'assets/images/heart.png'}" class="w-full h-48 object-cover rounded" alt="${memory.title || 'ความทรงจำ'}" onerror="this.src='assets/images/heart.png'">
+            <h3 class="text-xl font-bold mt-4">${memory.title || 'ไม่มีชื่อ'}</h3>
+            <p class="text-gray-600">${memory.date || 'ไม่มีวันที่'} - ${memory.desc || 'ไม่มีรายละเอียด'}</p>
             <img src="assets/images/sparkle.png" class="sparkle top-2 ${index % 2 === 0 ? 'left-2' : 'right-2'}" alt="Sparkle">
         `;
         container.appendChild(card);
     });
 }
 
-// Load Saved Memories
+// Load Memories
 document.addEventListener('DOMContentLoaded', () => {
-    const savedMemories = localStorage.getItem('memories');
-    if (!savedMemories) {
-        // Initialize default memories if none exist
-        const defaultMemories = [
-            {
-                title: "1 เดือน",
-                date: "28 เมษายน 2568",
-                desc: "เป็น 1 เดือนที่มีความสุข",
-                image: "assets/images/3.jpg"
-            },
-            {
-                title: "2 เดือน",
-                date: "28 พฤษภาคม 2568",
-                desc: "ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ",
-                image: "assets/images/4.jpg"
-            }
-        ];
-        localStorage.setItem('memories', JSON.stringify(defaultMemories));
-    }
- cabeça
-
-System: renderMemories();
+    // Define default memories
+    const defaultMemories = [
+        {
+            title: "1 เดือน",
+            date: "28 เมษายน 2568",
+            desc: "เป็น 1 เดือนที่มีความสุขที่สุดเลย",
+            image: "assets/images/3.jpg"
+        },
+        {
+            title: "2 เดือน",
+            date: "28 พฤษภาคม 2568",
+            desc: "ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ",
+            image: "assets/images/4.jpg"
+        }
+        // เพิ่มความทรงจำใหม่ที่นี่
+    ];
+    // Always reset to default memories
+    localStorage.setItem('memories', JSON.stringify(defaultMemories));
+    renderMemories();
 });
 
 // Heart Collecting Game
