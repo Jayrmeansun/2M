@@ -78,7 +78,67 @@ document.addEventListener('DOMContentLoaded', () => {
             date: "28 พฤษภาคม 2568",
             desc: "ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ",
             image: "assets/images/4.jpg"
-        }
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic3.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic4.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic5.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic6.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic7.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic8.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic9.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic10.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic11.jpg"
+        },
+        {
+            title: "",
+            date: "",
+            desc: "",
+            image: "assets/images/pic12.jpg"
+        },
         // เพิ่มความทรงจำใหม่ที่นี่
     ];
     // Always reset to default memories
