@@ -10,7 +10,8 @@
         body { font-family: 'Prompt', sans-serif; }
         .card { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
         .card.visible { opacity: 1; transform: translateY(0); }
-        img { display: block; } /* Ensure images are visible */
+        .gallery-card img { max-width: 100%; height: auto; display: block; } /* Original size with container limit */
+        .gallery-card { overflow: auto; } /* Handle large images */
     </style>
 </head>
 <body class="bg-pink-50">

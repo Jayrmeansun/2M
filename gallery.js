@@ -5,13 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "1 เดือน",
             date: "28 เมษายน 2568",
             desc: "เป็น 1 เดือนที่มีความสุขที่สุดเลย",
-            image: "assets/images/3.jpg"
+            image: "assets/images/3.jpg",
+            image: "assets/images/memory1.png"
         },
         {
             title: "2 เดือน",
             date: "28 พฤษภาคม 2568",
             desc: "ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ",
-            image: "assets/images/4.jpg"
+            image: "assets/images/4.jpg",
+            image: "assets/images/memory2.png"
         }
         // เพิ่มรูปภาพและรายละเอียดใหม่ที่นี่
     ];
@@ -55,10 +57,10 @@ function renderGallery() {
         memories.forEach((memory, index) => {
             console.log(`Rendering memory ${index}:`, memory); // Debug
             const card = document.createElement('div');
-            card.className = `card bg-${index % 2 === 0 ? 'pink' : 'purple'}-50 p-6 rounded-lg shadow-md`;
+            card.className = `card gallery-card bg-${index % 2 === 0 ? 'pink' : 'purple'}-50 p-6 rounded-lg shadow-md`;
             const imageSrc = memory.image || 'assets/images/heart.png';
             card.innerHTML = `
-                <img src="${imageSrc}" class="w-full h-48 object-cover rounded" alt="${memory.title || 'ภาพ'}" onerror="this.src='assets/images/heart.png'">
+                <img src="${imageSrc}" class="rounded" alt="${memory.title || 'ภาพ'}" onerror="this.src='assets/images/heart.png'">
                 <h3 class="text-xl font-bold mt-4">${memory.title || 'ไม่มีชื่อ'}</h3>
                 <p class="text-gray-600">${memory.date || 'ไม่มีวันที่'} - ${memory.desc || 'ไม่มีรายละเอียด'}</p>
             `;
