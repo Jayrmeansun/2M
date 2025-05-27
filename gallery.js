@@ -5,15 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "1 เดือน",
             date: "28 เมษายน 2568",
             desc: "เป็น 1 เดือนที่มีความสุขที่สุดเลย",
-            image: "assets/images/3.jpg",
-            image: "assets/images/memory1.png"
+            image: "assets/images/3.jpg"
         },
         {
             title: "2 เดือน",
             date: "28 พฤษภาคม 2568",
             desc: "ขอบคุณที่อยู่ด้วยกันมาสองเดือนแล้วนะค้าบ",
-            image: "assets/images/4.jpg",
-            image: "assets/images/memory2.png"
+            image: "assets/images/4.jpg"
         }
         // เพิ่มรูปภาพและรายละเอียดใหม่ที่นี่
     ];
