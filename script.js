@@ -1,7 +1,7 @@
 let audio = document.getElementById('bgm');
 let isPlaying = false;
 let heartClickCount = 0;
-const targetScore = 365;
+const targetScore = 60;
 let score = 0;
 
 // Play/Pause Music
